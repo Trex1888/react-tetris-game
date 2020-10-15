@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-
 import { createStage, checkCollision } from '../gameHelper';
-
 //styled components
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
-
 // custom hooks
 import { useInterval } from '../hooks/useInterval';
 import { usePlayer } from '../hooks/usePlayer';
 import { useStage } from '../hooks/useStage';
 import { useGameStatus } from '../hooks/useGameStatus';
-
 //components
 import Stage from './Stage';
 import Display from './Display';
@@ -19,7 +15,6 @@ import StartButton from './StartButton';
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
